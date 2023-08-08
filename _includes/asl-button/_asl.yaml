@@ -3,11 +3,11 @@ params:
   type: string
   required: true
   description: what the button says
-- name: srdescription
+- name: SRtext
   type: string
   required: true
-  description: 
+  description: descriptive text to allow screenreaders to understand what this link/button is for
 - name: link
   type: string
   required: true
-  description: 
+  description: it's the link
