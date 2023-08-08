@@ -1,5 +1,25 @@
 
 
 
-<span class=""> {% include './_asl-svg.njk' %} </span>
-<a href=""> {{params.text}} <span class=""> {{params.SRtext}} </span></a>
+<div class="nysds-asl-container">
+<a href="{{params.link}}" class="nysds-asl-link"> 
+    <div class="nysds-asl-svg"> 
+    </div>
+
+    
+    <div class="nysds-asl-link-text">
+        {{params.text}}
+    </div>
+     <span class="nysds-sr-only"> 
+        {{params.SRtext}} 
+    </span>
+</a>
+</div>
+
+<style>
+    {% include 'css/nysds-asl.css' %}
+</style>
+
+<script>
+    {% include 'js/nysds-asl.js' %}
+</script>
