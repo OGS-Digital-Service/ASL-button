@@ -1,0 +1,17 @@
+---
+layout: layout.njk
+title: OGS ASL Button Demo
+---
+
+<h1>{{title}}</h1>
+
+{% from './_includes/asl-button/_macro.njk' import asl %}
+
+{{
+    asl({
+        text:"something",
+        arialabel:"",
+        link:""
+        
+    })
+}}
