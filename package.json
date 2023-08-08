@@ -4,7 +4,8 @@
   "description": "Encapsulated component for ASL translation buttons",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npx @11ty/eleventy --serve",
+    "test": "pa11y-ci"
   },
   "keywords": [],
   "author": "",
