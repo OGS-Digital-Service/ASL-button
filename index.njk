@@ -6,19 +6,25 @@ title: OGS ASL Button Demo
 <h1>{{title}}</h1>
 
 {% from './_includes/asl-button/_macro.njk' import asl %}
-<div style="height: 200px"></div>
+
+<h2> Rendered Component from Template </h2>
+
 {{
     asl({
-        text:"American Sign Language (ASL)",
-        SRtext:"for this video with a title of blankity blank blank",
+        text:"ASL Interpretation Video",
+        SRtext:"for ",
         link:"https://ogs.ny.gov"
         
     })
 }}
 
 
+<div style="height: 200px"></div>
 
+<h2> Shadow DOM Encapsulated Web Component with plain text fallback </h2>
 <script>
 {% include 'js/nysds-asl.js' %}
 </script>
-<nysds-asl-button></nysds-asl-button>
+<nysds-asl-button>
+    <slot> <a href="https://www.ogs.ny.gov"> ASL Interpretation Video for SR text </a></slot>
+</nysds-asl-button>
