@@ -261,9 +261,12 @@ customElements.define('nysds-asl-button', class extends HTMLElement {
 
 <form>
 <input type="text" id="ASLlink" required>
+<label for="ASLlinkt"> Full URL for the button (please include https://) </label>
 <input type="text" id="ASLsrtext" required>
-<button type="button" id="generator"> Generate ASL Link Code </button>
-<button type="button" id="reset"> Reset for new button </button>
+<label for="ASLsrtext"> Descriptive text for screenreader users </label>
+<input type="submit" id="generator" value="Generate ASL Link Code "> 
+<button type="button" id="reset"> Reset for new button code </button>
+<button type="button" id="copy"> copy code to clipboard </button>
 <textarea id="ASLoutput" autocomplete="off" spellcheck="no" rows="25" cols="75">
 </textarea>
 </form>
@@ -290,6 +293,7 @@ customElements.define('nysds-asl-value1', class extends HTMLElement {
 <script>
     const btn = document.getElementById('generator');
     const clear = document.getElementById('reset');
+    const copy = document.getElementById('copy');
     const output = document.getElementById('ASLoutput');
     const org = document.getElementById('original').innerHTML;
     const reg1 = new RegExp("value1", "g")
@@ -314,6 +318,19 @@ customElements.define('nysds-asl-value1', class extends HTMLElement {
 
     btn.addEventListener('click', generateASLcode)
     clear.addEventListener('click', clearASL)
+    copy.addEventListener('click', copyContent)
+
+      let code = output.innerHTML
+        const copyContent = async () => {
+        try {
+            await navigator.clipboard.writeText(text);
+             console.log('Content copied to clipboard');
+            } catch (err) {
+      
+            }
+  }
+
+
 </script>
     </main>
 
